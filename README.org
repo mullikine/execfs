@@ -1,0 +1,5 @@
+* This is a good example
+derpfs.py
+
+* This is not a great example
+$MYGIT/PyFilesystem/fs.dropboxfs/dropboxfs/dropboxfs.py
