@@ -7,7 +7,6 @@
 # requires modification to pyfilesystem for mknod etc.
 # but provides enough to extract a minimal linux install
 # and then chroot into it :)
-import pymongo
 import gridfs
 import os
 import fs
@@ -15,7 +14,6 @@ import math
 import fs.errors as errors
 from fs.path import abspath, relpath, normpath, dirname, pathjoin
 from fs.base import FS, NullFile
-from fs import _thread_synchronize_default, SEEK_END
 from fs.remote import RemoteFileBuffer
 from fs.base import fnmatch, NoDefaultMeta
 from posixpath import sep, pardir, join
@@ -26,7 +24,6 @@ from logging import DEBUG, INFO, ERROR, CRITICAL
 
 import stat as statinfo
 
-#from fs.memoryfs import MemoryFS
 from fs.expose import fuse
 
 logger = fs.getLogger('fs.derpfs')
@@ -47,7 +44,7 @@ def _fixpath(path):
     return abspath(normpath(path))
 
 
-class DerpFS(FS):
+class ExecFS(FS):
     _meta = {	'virtual': False,
                 'read_only': False,
                 'unicode_paths': False,
@@ -60,9 +57,7 @@ class DerpFS(FS):
         self.cache = False
         self.mdb = mdb
         self.collection_name = collection_name
-        self.files = pymongo.collection.Collection(mdb, collection_name+".files")
-        self.gfs = gridfs.GridFS(mdb, collection=collection_name)
-        super(DerpFS, self).__init__(thread_synchronize=_thread_synchronize_default)
+        super(ExecFS, self).__init__()
 
     def check_write(self):
         if self.getmeta('read_only'):
@@ -77,7 +72,6 @@ class DerpFS(FS):
 
         bn = os.path.basename(path)
         dn = os.path.dirname(path)
-        self.gfs.put('', filename=bn, type='dev', dev=dev_no, dir=dn, mode=mode_no)
         return 0
 
     @_fix_path
@@ -113,7 +107,6 @@ class DerpFS(FS):
             pass
         bn = os.path.basename(path)
         dn = os.path.dirname(path)
-        self.gfs.put('', filename=bn, type='link', target=to_path, dir=dn, mode=0777)
 
     @_fix_path
     def readlink(self, path):
@@ -145,7 +138,6 @@ class DerpFS(FS):
             if info['type'] != 'file':
                 self._log(DEBUG, "Path %s is  not a file" % path)
                 raise errors.ResourceInvalidError(path)
-            handler = self.gfs.get(info['_id'])
 
         return RemoteFileBuffer(self, path, mode, handler,
                     write_on_flush=False)
@@ -248,7 +240,6 @@ class DerpFS(FS):
         info = self.getinfo(path)
         if info['type'] != 'file' and info['type'] != 'link' and info['type'] != 'dev':
             raise errors.ResourceNotFoundError(path)
-        self.gfs.delete(info['_id'])
 
     @_fix_path
     def removedir(self, path, recursive=False, force=False):
@@ -260,7 +251,6 @@ class DerpFS(FS):
         # TODO: replace with 'find_one'
         if len(self.listdir(path)) > 1:
             raise errors.DirectoryNotEmptyError(path)
-        self.gfs.delete(info['_id'])
 
     @_fix_path
     def setcontents(self, path, file, chunk_size=64*1024):
@@ -273,7 +263,6 @@ class DerpFS(FS):
             pass
 
         if info is not None:
-            self.gfs.delete(info['_id'])
         else:
             info = {
                 'name': os.path.basename(path),
@@ -281,7 +270,6 @@ class DerpFS(FS):
                 'type': 'file',
                 'st_mode': 0644
             }
-        self.gfs.put(file, filename=info['name'], type=info['type'], dir=info['dir'], mode=info['st_mode'])
 
     @_fix_path
     def makedir(self, path, dir_mode=0755, recursive=False, allow_recreate=False):
@@ -292,7 +280,6 @@ class DerpFS(FS):
         bn = os.path.basename(path)
         dn = os.path.dirname(path)
         try:
-            self.gfs.put('', filename=bn, type='dir', dir=dn, mode=dir_mode)
         except gridfs.errors.FileExists, e:
             if not allow_recreate:
                 raise errors.DestinationExistsError(path)
@@ -328,15 +315,11 @@ class DerpFS(FS):
             self.cache[path] = info
         return info
 
-mdb = pymongo.Connection("localhost").dfs
-gfs = gridfs.GridFS(mdb, collection="fs")
-
 try:
     bn = os.path.basename("/")
     dn = os.path.dirname("/")
-    gfs.put('', filename=bn, type='dir', dir=dn, uid=0, gid=0, mode=0755)
 except:
     pass
 
-memfs = DerpFS(mdb, "fs")
+memfs = ExecFS(mdb, "fs")
 mp = fuse.mount(memfs, "./tmp", foreground=True, fsname="derp-fs")
