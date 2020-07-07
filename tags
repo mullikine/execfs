@@ -1,0 +1,146 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+DerpFS	derpfs.py	/^class DerpFS(FS):$/;"	c
+DerpFS	myfs.py	/^class DerpFS(FS):$/;"	c
+DerpFS	myfuse.py	/^class DerpFS(FS):$/;"	c
+DropboxFS	dropbox/dropboxfs.py	/^class DropboxFS(FS):$/;"	c
+DropboxFile	dropbox/dropboxfs.py	/^class DropboxFile(BytesIO):$/;"	c
+DropboxOpener	opener.py	/^class DropboxOpener(Opener):$/;"	c
+TestDropboxFS	dropbox/test_dropboxfs.py	/^class TestDropboxFS(FSTestCases, unittest.TestCase):$/;"	c
+__init__	derpfs.py	/^    def __init__(self, mdb, collection_name):$/;"	m	class:DerpFS
+__init__	dropbox/dropboxfs.py	/^    def __init__(self, accessToken, session=None):$/;"	m	class:DropboxFS
+__init__	dropbox/dropboxfs.py	/^    def __init__(self, dropbox, path, mode):$/;"	m	class:DropboxFile
+__init__	myfs.py	/^    def __init__(self, mdb, collection_name):$/;"	m	class:DerpFS
+__init__	myfuse.py	/^    def __init__(self, mdb, collection_name):$/;"	m	class:DerpFS
+__length_hint__	dropbox/dropboxfs.py	/^        def __length_hint__(self):$/;"	f	function:DropboxFile.__init__	file:
+__repr__	dropbox/dropboxfs.py	/^    def __repr__(self):$/;"	m	class:DropboxFS	file:
+_fix_path	derpfs.py	/^def _fix_path(func):$/;"	f
+_fix_path	myfs.py	/^def _fix_path(func):$/;"	f
+_fix_path	myfuse.py	/^def _fix_path(func):$/;"	f
+_fixpath	derpfs.py	/^def _fixpath(path):$/;"	f
+_fixpath	myfs.py	/^def _fixpath(path):$/;"	f
+_fixpath	myfuse.py	/^def _fixpath(path):$/;"	f
+_infoFromMetadata	dropbox/dropboxfs.py	/^    def _infoFromMetadata(self, metadata):$/;"	m	class:DropboxFS
+_info_from_node	derpfs.py	/^    def _info_from_node(self, node):$/;"	m	class:DerpFS
+_info_from_node	myfs.py	/^    def _info_from_node(self, node):$/;"	m	class:DerpFS
+_info_from_node	myfuse.py	/^    def _info_from_node(self, node):$/;"	m	class:DerpFS
+_log	derpfs.py	/^    def _log(self, level, message):$/;"	m	class:DerpFS
+_log	myfs.py	/^    def _log(self, level, message):$/;"	m	class:DerpFS
+_log	myfuse.py	/^    def _log(self, level, message):$/;"	m	class:DerpFS
+_meta	derpfs.py	/^    _meta = {	'virtual': False,$/;"	v	class:DerpFS
+_meta	dropbox/dropboxfs.py	/^    _meta = {$/;"	v	class:DropboxFS
+_meta	myfs.py	/^    _meta = {	'virtual': False,$/;"	v	class:DerpFS
+_meta	myfuse.py	/^    _meta = {	'virtual': False,$/;"	v	class:DerpFS
+apierror_map	dropbox/dropboxfs.py	/^    def apierror_map(self, error):$/;"	m	class:DropboxFS
+bn	derpfs.py	/^    bn = os.path.basename("\/")$/;"	v	class:DerpFS
+bn	myfs.py	/^    bn = os.path.basename("\/")$/;"	v	class:DerpFS
+bn	myfuse.py	/^    bn = os.path.basename("\/")$/;"	v	class:DerpFS
+check_write	derpfs.py	/^    def check_write(self):$/;"	m	class:DerpFS
+check_write	myfs.py	/^    def check_write(self):$/;"	m	class:DerpFS
+check_write	myfuse.py	/^    def check_write(self):$/;"	m	class:DerpFS
+chmod	derpfs.py	/^    def chmod(self, path, mode):$/;"	m	class:DerpFS
+chmod	myfs.py	/^    def chmod(self, path, mode):$/;"	m	class:DerpFS
+chmod	myfuse.py	/^    def chmod(self, path, mode):$/;"	m	class:DerpFS
+chown	derpfs.py	/^    def chown(self, path, uid, gid):$/;"	m	class:DerpFS
+chown	myfs.py	/^    def chown(self, path, uid, gid):$/;"	m	class:DerpFS
+chown	myfuse.py	/^    def chown(self, path, uid, gid):$/;"	m	class:DerpFS
+close	dropbox/dropboxfs.py	/^    def close(self):$/;"	m	class:DropboxFile
+copy	dropbox/dropboxfs.py	/^    def copy(self, src_path, dst_path, overwrite=False):$/;"	m	class:DropboxFS
+dn	derpfs.py	/^    dn = os.path.dirname("\/")$/;"	v	class:DerpFS
+dn	myfs.py	/^    dn = os.path.dirname("\/")$/;"	v	class:DerpFS
+dn	myfuse.py	/^    dn = os.path.dirname("\/")$/;"	v	class:DerpFS
+exists	dropbox/dropboxfs.py	/^    def exists(self, path):$/;"	m	class:DropboxFS
+fix_path	dropbox/dropboxfs.py	/^    def fix_path(self, path):$/;"	m	class:DropboxFS
+get_parent	dropbox/dropboxfs.py	/^    def get_parent(self, dst_path):$/;"	m	class:DropboxFS
+getinfo	derpfs.py	/^    def getinfo(self, path):$/;"	m	class:DerpFS
+getinfo	dropbox/dropboxfs.py	/^    def getinfo(self, path, namespaces=None):$/;"	m	class:DropboxFS
+getinfo	myfs.py	/^    def getinfo(self, path):$/;"	m	class:DerpFS
+getinfo	myfuse.py	/^    def getinfo(self, path):$/;"	m	class:DerpFS
+gfs	derpfs.py	/^gfs = gridfs.GridFS(mdb, collection="fs")$/;"	v
+gfs	myfs.py	/^gfs = gridfs.GridFS(mdb, collection="fs")$/;"	v
+gfs	myfuse.py	/^gfs = gridfs.GridFS(mdb, collection="fs")$/;"	v
+ilistdir	derpfs.py	/^    def ilistdir(self, *args, **kwds):$/;"	m	class:DerpFS
+ilistdir	myfs.py	/^    def ilistdir(self, *args, **kwds):$/;"	m	class:DerpFS
+ilistdir	myfuse.py	/^    def ilistdir(self, *args, **kwds):$/;"	m	class:DerpFS
+ilistdirinfo	derpfs.py	/^    def ilistdirinfo(self, path="\/", wildcard=None, full=False, absolute=False,$/;"	m	class:DerpFS
+ilistdirinfo	myfs.py	/^    def ilistdirinfo(self, path="\/", wildcard=None, full=False, absolute=False,$/;"	m	class:DerpFS
+ilistdirinfo	myfuse.py	/^    def ilistdirinfo(self, path="\/", wildcard=None, full=False, absolute=False,$/;"	m	class:DerpFS
+isdir	derpfs.py	/^    def isdir(self, path):$/;"	m	class:DerpFS
+isdir	myfs.py	/^    def isdir(self, path):$/;"	m	class:DerpFS
+isdir	myfuse.py	/^    def isdir(self, path):$/;"	m	class:DerpFS
+isfile	derpfs.py	/^    def isfile(self, path):$/;"	m	class:DerpFS
+isfile	myfs.py	/^    def isfile(self, path):$/;"	m	class:DerpFS
+isfile	myfuse.py	/^    def isfile(self, path):$/;"	m	class:DerpFS
+join	dropbox/test_dropboxfs.py	/^def join(a, b):$/;"	f
+listdir	derpfs.py	/^    def listdir(self, *args, **kwargs):$/;"	m	class:DerpFS
+listdir	dropbox/dropboxfs.py	/^    def listdir(self, path):$/;"	m	class:DropboxFS
+listdir	myfs.py	/^    def listdir(self, *args, **kwargs):$/;"	m	class:DerpFS
+listdir	myfuse.py	/^    def listdir(self, *args, **kwargs):$/;"	m	class:DerpFS
+listdirinfo	derpfs.py	/^    def listdirinfo(self, *args, **kwds):$/;"	m	class:DerpFS
+listdirinfo	myfs.py	/^    def listdirinfo(self, *args, **kwds):$/;"	m	class:DerpFS
+listdirinfo	myfuse.py	/^    def listdirinfo(self, *args, **kwds):$/;"	m	class:DerpFS
+log	dropbox/dropboxfs.py	/^log = logging.getLogger(__name__)$/;"	v
+logger	derpfs.py	/^logger = fs.getLogger('fs.derpfs')$/;"	v
+logger	myfs.py	/^logger = fs.getLogger('fs.derpfs')$/;"	v
+logger	myfuse.py	/^logger = fs.getLogger('fs.derpfs')$/;"	v
+make_fs	dropbox/test_dropboxfs.py	/^    def make_fs(self):$/;"	m	class:TestDropboxFS
+makedir	derpfs.py	/^    def makedir(self, path, dir_mode=0755, recursive=False, allow_recreate=False):$/;"	m	class:DerpFS
+makedir	dropbox/dropboxfs.py	/^    def makedir(self, path, permissions=None, recreate=False):$/;"	m	class:DropboxFS
+makedir	myfs.py	/^    def makedir(self, path, dir_mode=0755, recursive=False, allow_recreate=False):$/;"	m	class:DerpFS
+makedir	myfuse.py	/^    def makedir(self, path, dir_mode=0755, recursive=False, allow_recreate=False):$/;"	m	class:DerpFS
+mdb	derpfs.py	/^mdb = pymongo.Connection("localhost").dfs$/;"	v
+mdb	myfs.py	/^mdb = pymongo.Connection("localhost").dfs$/;"	v
+mdb	myfuse.py	/^mdb = pymongo.Connection("localhost").dfs$/;"	v
+memfs	derpfs.py	/^memfs = DerpFS(mdb, "fs")$/;"	v
+memfs	myfs.py	/^memfs = DerpFS(mdb, "fs")$/;"	v
+memfs	myfuse.py	/^memfs = DerpFS(mdb, "fs")$/;"	v
+mknod	derpfs.py	/^    def mknod(self, path, mode_no, dev_no):$/;"	m	class:DerpFS
+mknod	myfs.py	/^    def mknod(self, path, mode_no, dev_no):$/;"	m	class:DerpFS
+mknod	myfuse.py	/^    def mknod(self, path, mode_no, dev_no):$/;"	m	class:DerpFS
+move	dropbox/dropboxfs.py	/^    def move(self, src_path, dst_path, overwrite=False):$/;"	m	class:DropboxFS
+mp	derpfs.py	/^mp = fuse.mount(memfs, ".\/tmp", foreground=True, fsname="derp-fs")/;"	v
+mp	myfs.py	/^mp = fuse.mount(memfs, ".\/tmp", foreground=True, fsname="derp-fs")/;"	v
+mp	myfuse.py	/^mp = fuse.mount(memfs, ".\/tmp", foreground=True, fsname="derp-fs")/;"	v
+open	derpfs.py	/^    def open(self, path, mode='r', **kwargs):$/;"	m	class:DerpFS
+open	myfs.py	/^    def open(self, path, mode='r', **kwargs):$/;"	m	class:DerpFS
+open	myfuse.py	/^    def open(self, path, mode='r', **kwargs):$/;"	m	class:DerpFS
+open_fs	opener.py	/^    def open_fs(fs_url, parse_result, writeable, create, cwd):$/;"	m	class:DropboxOpener
+openbin	dropbox/dropboxfs.py	/^    def openbin(self, path, mode="r", buffering=-1, **options):$/;"	m	class:DropboxFS
+protocols	opener.py	/^    protocols = ["dropbox"]$/;"	v	class:DropboxOpener
+read	dropbox/dropboxfs.py	/^    def read(self, size=None):$/;"	m	class:DropboxFile
+readable	dropbox/dropboxfs.py	/^    def readable(self):$/;"	m	class:DropboxFile
+readlink	derpfs.py	/^    def readlink(self, path):$/;"	m	class:DerpFS
+readlink	myfs.py	/^    def readlink(self, path):$/;"	m	class:DerpFS
+readlink	myfuse.py	/^    def readlink(self, path):$/;"	m	class:DerpFS
+remove	derpfs.py	/^    def remove(self, path):$/;"	m	class:DerpFS
+remove	dropbox/dropboxfs.py	/^    def remove(self, path):$/;"	m	class:DropboxFS
+remove	myfs.py	/^    def remove(self, path):$/;"	m	class:DerpFS
+remove	myfuse.py	/^    def remove(self, path):$/;"	m	class:DerpFS
+removedir	derpfs.py	/^    def removedir(self, path, recursive=False, force=False):$/;"	m	class:DerpFS
+removedir	dropbox/dropboxfs.py	/^    def removedir(self, path):$/;"	m	class:DropboxFS
+removedir	myfs.py	/^    def removedir(self, path, recursive=False, force=False):$/;"	m	class:DerpFS
+removedir	myfuse.py	/^    def removedir(self, path, recursive=False, force=False):$/;"	m	class:DerpFS
+rename	derpfs.py	/^    def rename(self, src, dst):$/;"	m	class:DerpFS
+rename	myfs.py	/^    def rename(self, src, dst):$/;"	m	class:DerpFS
+rename	myfuse.py	/^    def rename(self, src, dst):$/;"	m	class:DerpFS
+setcontents	derpfs.py	/^    def setcontents(self, path, file, chunk_size=64*1024):$/;"	m	class:DerpFS
+setcontents	myfs.py	/^    def setcontents(self, path, file, chunk_size=64*1024):$/;"	m	class:DerpFS
+setcontents	myfuse.py	/^    def setcontents(self, path, file, chunk_size=64*1024):$/;"	m	class:DerpFS
+setinfo	dropbox/dropboxfs.py	/^    def setinfo(self, path, info):$/;"	m	class:DropboxFS
+settimes	derpfs.py	/^    def settimes(self, path, accessed_time, modified_time):$/;"	m	class:DerpFS
+settimes	myfs.py	/^    def settimes(self, path, accessed_time, modified_time):$/;"	m	class:DerpFS
+settimes	myfuse.py	/^    def settimes(self, path, accessed_time, modified_time):$/;"	m	class:DerpFS
+symlink	derpfs.py	/^    def symlink(self, path, to_path):$/;"	m	class:DerpFS
+symlink	myfs.py	/^    def symlink(self, path, to_path):$/;"	m	class:DerpFS
+symlink	myfuse.py	/^    def symlink(self, path, to_path):$/;"	m	class:DerpFS
+test_case_sensitive	dropbox/test_dropboxfs.py	/^    def test_case_sensitive(self):$/;"	m	class:TestDropboxFS
+truncate	dropbox/dropboxfs.py	/^    def truncate(self, size=None):$/;"	m	class:DropboxFile
+wrapper	derpfs.py	/^    def wrapper(self, *args, **kwds):$/;"	f	function:_fix_path
+wrapper	myfs.py	/^    def wrapper(self, *args, **kwds):$/;"	f	function:_fix_path
+wrapper	myfuse.py	/^    def wrapper(self, *args, **kwds):$/;"	f	function:_fix_path
+writable	dropbox/dropboxfs.py	/^    def writable(self):$/;"	m	class:DropboxFile
+write	dropbox/dropboxfs.py	/^    def write(self, data):$/;"	m	class:DropboxFile

@@ -49,12 +49,12 @@ def _fixpath(path):
 
 class DerpFS(FS):
     _meta = {	'virtual': False,
-				'read_only': False,
-				'unicode_paths': False,
-				'case_insensitive_paths': False,
-				'network': True,
+                'read_only': False,
+                'unicode_paths': False,
+                'case_insensitive_paths': False,
+                'network': True,
                 'derpfs.author': 'Derp Ltd.'
-			}
+            }
 
     def __init__(self, mdb, collection_name):
         self.cache = False
@@ -193,7 +193,7 @@ class DerpFS(FS):
         elif node['type'] == "link":
             info['st_mode'] |= statinfo.S_IFLNK
         elif node['type'] == 'file':
-       	    info['st_mode'] |= statinfo.S_IFREG
+            info['st_mode'] |= statinfo.S_IFREG
             info['st_nlink'] = 1
         elif node['type'] == 'dev':
             #info['st_mode'] |= statinfo.S_IFCHR
@@ -254,7 +254,7 @@ class DerpFS(FS):
     def removedir(self, path, recursive=False, force=False):
         '''Essential'''
         self.check_write()
-    	info = self.getinfo(path)
+        info = self.getinfo(path)
         if info['type'] != 'dir':
             raise errors.ResourceInvalidError(path)
         # TODO: replace with 'find_one'
@@ -299,7 +299,7 @@ class DerpFS(FS):
 
     def rename(self, src, dst):
         '''Essential'''
-    	raise errors.UnsupportedError('read only filesystem')
+        raise errors.UnsupportedError('read only filesystem')
 
     def _log(self, level, message):
         if not logger.isEnabledFor(level): return
@@ -314,7 +314,7 @@ class DerpFS(FS):
         if self.cache and path in self.cache:
             return self.cache[path]
         bn = os.path.basename(path)
-    	dn = os.path.dirname(path)
+        dn = os.path.dirname(path)
         node = self.files.find_one({'dir':dn,'filename':bn})
         if not node:
             raise errors.ResourceNotFoundError(path)
