@@ -13,7 +13,7 @@ import fs
 import math
 import fs.errors as errors
 from fs.path import abspath, relpath, normpath, dirname, pathjoin
-from fs.base import FS, NullFile
+from fs.base import FS
 from fs.remote import RemoteFileBuffer
 from fs.base import fnmatch, NoDefaultMeta
 from posixpath import sep, pardir, join
