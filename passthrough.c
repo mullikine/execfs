@@ -374,7 +374,7 @@ static int xmp_open(const char *path, struct fuse_file_info *fi)
 static int xmp_read(const char *path, char *buf, size_t size, off_t offset,
                     struct fuse_file_info *fi)
 {
-     StringBuilder *sb = sb_create();
+     /* StringBuilder *sb = sb_create(); */
 
      int fd;
      int res;
@@ -396,10 +396,20 @@ static int xmp_read(const char *path, char *buf, size_t size, off_t offset,
      /* if (fd == -1) */
      /* 	return -errno; */
 
-     read(outfp, buf, 128);
+     // LOL, just made it a big number
+     read(outfp, buf, 128000);
+
+     /* char c[2]; */
+     /* c[1] = '\0'; */
+     /* while ((c[0] = fgetc(&outfp)) != EOF) */
+     /* { */
+     /*      sb_append(sb, *c); */
+     /* } */
 
      pf(buf);
-     res=128;
+     /* res=128; */
+     /* res=sb->length; */
+     res=strlen(buf);
 
      // res = pread(fd, buf, size, offset);
      //if (res == -1)
