@@ -396,8 +396,20 @@ static int xmp_read(const char *path, char *buf, size_t size, off_t offset,
      /* if (fd == -1) */
      /* 	return -errno; */
 
+     char * buffer = 0;
+     long length;
+     fseek (outfp, 0, SEEK_END);
+     length = ftell (outfp);
+     fseek (outfp, 0, SEEK_SET);
+     buffer = malloc (length);
+     if (buffer)
+     {
+          fread (buffer, 1, length, outfp);
+     }
+     fclose (outfp);
+
      // LOL, just made it a big number
-     read(outfp, buf, 128000);
+     /* read(outfp, buf, 128000); */
 
      /* char c[2]; */
      /* c[1] = '\0'; */
@@ -406,7 +418,7 @@ static int xmp_read(const char *path, char *buf, size_t size, off_t offset,
      /*      sb_append(sb, *c); */
      /* } */
 
-     pf(buf);
+     pf(buffer);
      /* res=128; */
      /* res=sb->length; */
      res=strlen(buf);
